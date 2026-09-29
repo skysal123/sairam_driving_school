@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}{{ slug.replace('-', ' ') | title }} | {{ config.business_name }}{% endblock %}
+
+{% block content %}
+    <!-- Blog Header -->
+    <section class="py-20 bg-brandBlack text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1449965409954-47275a24379c?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover" alt="Background">
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <a href="{{ url_for('blog_list') }}" class="inline-flex items-center gap-2 text-brandRed font-bold mb-6 hover:gap-3 transition-all">
+                <i class="fa-solid fa-arrow-left"></i> Back to Blog
+            </a>
+            <h1 class="text-4xl md:text-6xl font-heading font-extrabold mb-6 leading-tight">{{ slug.replace('-', ' ') | title }}</h1>
+            <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-calendar"></i> Sept 30, 2026</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-clock"></i> 5 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1449965409954-47275a24379c?auto=format&fit=crop&q=80&w=1200" class="w-full h-96 object-cover rounded-3xl mb-12 shadow-xl" alt="Article Image">
+
+                <p class="text-xl font-medium mb-8 text-gray-900 italic">
+                    "Learning to drive is more than just a skill; it's about gaining independence and confidence on the road."
+                </p>
+
+                <div class="space-y-6">
+                    <p>This is a placeholder for the full article content. In a production environment, this content would be fetched from a database or a Markdown file based on the slug.</p>
+
+                    <h2 class="text-3xl font-heading font-bold text-brandBlack mt-12 mb-4">The Importance of Professional Training</h2>
+                    <p>Professional training ensures that you learn the right habits from the start. Many self-taught drivers develop "bad habits" that can be dangerous in high-traffic areas.</p>
+
+                    <h2 class="text-3xl font-heading font-bold text-brandBlack mt-12 mb-4">Top 3 Tips for Beginners</h2>
+                    <ul class="list-disc pl-6 space-y-4">
+                        <li><strong>Stay Calm:</strong> Anxiety is the biggest enemy of a new driver. Take deep breaths and focus on one control at a time.</li>
+                        <li><strong>Look Ahead:</strong> Don't just look at the car in front; look further down the road to anticipate traffic changes.</li>
+                        <li><strong>Practice Consistently:</strong> Driving is muscle memory. Short, frequent sessions are better than one long session per week.</li>
+                    </ul>
+
+                    <p class="mt-8">Whether you are learning on a Maruti Swift or a Brezza, the principles of safety remain the same. Focus on your surroundings, respect road signs, and always stay alert.</p>
+                </div>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="mt-20 p-10 bg-brandRed rounded-[3rem] text-white text-center shadow-2xl" data-aos="zoom-in">
+                <h3 class="text-3xl font-heading font-bold mb-4">Want to Start Learning?</h3>
+                <p class="mb-8 text-white/90 text-lg">Join Sairam Driving School and master the roads of {{ config.city }} with confidence.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="{{ url_for('contact') }}" class="bg-white text-brandRed px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all">Book a Lesson</a>
+                    <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="bg-brandBlack text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

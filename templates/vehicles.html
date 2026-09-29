@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Our Training Fleet | {{ config.business_name }}{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="py-20 bg-brandBlack text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1449965409954-47275a24379c?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover" alt="Background">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-heading font-extbold mb-6">Our <span class="text-brandGold">Fleet</span></h1>
+            <p class="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+                We use modern, well-maintained Maruti Suzuki vehicles to ensure a safe and comfortable learning experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- Vehicles Grid -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                {% set vehicles = [
+                    {
+                        "name": "Maruti Suzuki Swift",
+                        "img": "WhatsApp Image 2026-09-30 at 1.46.53 AM.jpeg",
+                        "suitability": "Urban Learning & Agility",
+                        "desc": "The Swift is our most popular training car. Its compact size and responsive handling make it perfect for learning how to navigate tight city streets and parking."
+                    },
+                    {
+                        "name": "Maruti Suzuki Brezza",
+                        "img": "WhatsApp Image 2026-09-30 at 1.46.53 AM (1).jpeg",
+                        "suitability": "Confidence & Visibility",
+                        "desc": "The Brezza provides a higher seating position, giving you a better view of the road and surrounding traffic, which is crucial for building confidence."
+                    },
+                    {
+                        "name": "Maruti Suzuki Ertiga",
+                        "img": "WhatsApp Image 2026-09-30 at 1.46.53 AM (2).jpeg",
+                        "suitability": "Stability & Long-Distance",
+                        "desc": "The Ertiga is ideal for learning how to handle larger vehicles and practicing long-distance driving stability and control."
+                    }
+                ] %}
+
+                {% for vehicle in vehicles %}
+                <div class="group" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-[3rem] mb-8 shadow-lg">
+                        <img src="{{ url_for('static', filename='images/' + vehicle.img) }}" alt="{{ vehicle.name }}" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-6 right-6 bg-brandGold text-brandBlack text-xs font-bold px-4 py-1 rounded-full uppercase">Training Car</div>
+                    </div>
+                    <h3 class="text-3xl font-heading font-bold mb-3">{{ vehicle.name }}</h3>
+                    <div class="flex items-center gap-2 text-brandGold font-bold mb-4 text-sm uppercase tracking-wide">
+                        <i class="fa-solid fa-star"></i> {{ vehicle.suitability }}
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed">{{ vehicle.desc }}</p>
+                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandBlack hover:text-brandGold transition-colors">
+                        Enquire for this vehicle <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

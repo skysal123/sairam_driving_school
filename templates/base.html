@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.business_name }} - {{ config.tagline }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}Professional driving lessons in {{ config.city }}. Learn to drive with confidence at {{ config.business_name }}. Beginner friendly and safety focused training.{% endblock %}">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlack: '#0B0B0B',
+                        brandWhite: '#FFFFFF',
+                        brandGold: '#C9A227', // Rich Gold
+                        brandChampagne: '#E5C766', // Champagne Gold
+                        brandLightBg: '#F7F7F5',
+                        brandText: '#171717',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #171717; background-color: #F7F7F5; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+
+        .glass-nav {
+            background: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .sticky-mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-mobile-cta { display: flex; }
+        }
+
+        .btn-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-transition:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3);
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(to right, #C9A227, #E5C766);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-brandLightBg text-brandText overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="glass-nav text-white fixed w-full z-50 top-0 left-0 border-b border-brandGold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{{ url_for('home') }}" class="flex items-center gap-2">
+                        <span class="text-brandGold text-2xl"><i class="fa-solid fa-steering-wheel"></i></span>
+                        <span class="font-heading font-extrabold text-xl tracking-tight leading-none">
+                            {{ config.business_name }}<br>
+                            <span class="text-xs font-sans font-medium text-gray-400 uppercase tracking-widest">Driving School</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="{{ url_for('home') }}" class="hover:text-brandGold transition-colors font-medium">Home</a>
+                    <a href="{{ url_for('about') }}" class="hover:text-brandGold transition-colors font-medium">About</a>
+                    <a href="{{ url_for('courses') }}" class="hover:text-brandGold transition-colors font-medium">Courses</a>
+                    <a href="{{ url_for('vehicles') }}" class="hover:text-brandGold transition-colors font-medium">Vehicles</a>
+                    <a href="{{ url_for('contact') }}" class="hover:text-brandGold transition-colors font-medium">Contact</a>
+                    <a href="{{ url_for('contact') }}" class="bg-brandGold text-brandBlack px-6 py-2 rounded-full font-bold btn-transition">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white text-3xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brandBlack text-white absolute w-full h-screen top-20 left-0 flex flex-col p-6 space-y-6 text-center text-xl font-medium">
+            <a href="{{ url_for('home') }}" class="py-4 border-b border-gray-800">Home</a>
+            <a href="{{ url_for('about') }}" class="py-4 border-b border-gray-800">About</a>
+            <a href="{{ url_for('courses') }}" class="py-4 border-b border-gray-800">Courses</a>
+            <a href="{{ url_for('vehicles') }}" class="py-4 border-b border-gray-800">Vehicles</a>
+            <a href="{{ url_for('contact') }}" class="py-4 border-b border-gray-800">Contact</a>
+            <a href="{{ url_for('contact') }}" class="bg-brandGold text-brandBlack px-6 py-3 rounded-full font-bold">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brandBlack text-white pt-16 pb-24 md:pb-12 border-t border-brandGold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Brand Column -->
+                <div class="col-span-1 md:col-span-1">
+                    <a href="{{ url_for('home') }}" class="flex items-center gap-2 mb-6">
+                        <span class="text-brandGold text-2xl"><i class="fa-solid fa-steering-wheel"></i></span>
+                        <span class="font-heading font-extrabold text-xl tracking-tight">
+                            {{ config.business_name }}
+                        </span>
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        {{ config.tagline }} Professional driving lessons for all ages and skill levels in {{ config.city }}.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-brandGold transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brandGold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/{{ config.whatsapp }}" class="text-gray-400 hover:text-brandGold transition-colors text-xl"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 uppercase tracking-wider text-brandGold">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="{{ url_for('home') }}" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="{{ url_for('about') }}" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="{{ url_for('courses') }}" class="hover:text-white transition-colors">Driving Courses</a></li>
+                        <li><a href="{{ url_for('vehicles') }}" class="hover:text-white transition-colors">Our Fleet</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 uppercase tracking-wider text-brandGold">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brandGold"></i>
+                            <span>{{ config.address }}, {{ config.city }} - {{ config.pincode }}</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone mt-1 text-brandGold"></i>
+                            <a href="tel:{{ config.phone }}" class="hover:text-white transition-colors">{{ config.phone }}</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-brandGold"></i>
+                            <a href="mailto:{{ config.email }}" class="hover:text-white transition-colors">{{ config.email }}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Area -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 uppercase tracking-wider text-brandGold">Service Area</h4>
+                    <p class="text-gray-400 leading-relaxed">
+                        We provide door-step pickup and drop for driving lessons across:
+                        <br><br>
+                        <span class="text-white font-medium">{{ config.area }}, {{ config.city }} and surrounding regions.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 {{ config.business_name }}. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-mobile-cta bg-white border-t border-gray-200 shadow-2xl">
+        <a href="tel:{{ config.phone }}" class="flex-1 py-4 text-center text-brandText font-bold border-r border-gray-200 active:bg-gray-100">
+            <i class="fa-solid fa-phone block text-sm mb-1"></i> Call Now
+        </a>
+        <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="flex-1 py-4 text-center text-white font-bold bg-green-500 active:bg-green-600">
+            <i class="fa-brands fa-whatsapp block text-sm mb-1"></i> WhatsApp
+        </a>
+        <a href="{{ url_for('contact') }}" class="flex-1 py-4 text-center text-brandBlack font-bold bg-brandGold active:bg-yellow-600">
+            <i class="fa-solid fa-calendar-check block text-sm mb-1"></i> Book
+        </a>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="fixed bottom-24 right-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform active:scale-95 hidden md:flex">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

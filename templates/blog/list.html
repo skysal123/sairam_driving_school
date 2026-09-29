@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Driving Tips & Blog | {{ config.business_name }}{% endblock %}
+
+{% block content %}
+    <!-- Blog Hero -->
+    <section class="py-20 bg-brandBlack text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1449965409954-47275a24379c?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover" alt="Blog Background">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-6">Driving <span class="text-brandRed">Insights</span></h1>
+            <p class="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+                Expert tips, road safety guides, and advice to help you become a confident and safe driver in Indian traffic.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                {% set posts = [
+                    {
+                        "title": "How Long Does It Take to Learn Driving?",
+                        "slug": "how-long-to-learn-driving",
+                        "excerpt": "Wondering about the timeline? We break down the learning curve from day 1 to confidence.",
+                        "img": "https://images.unsplash.com/photo-1517677208131-a577a7396c74?auto=format&fit=crop&q=80&w=600",
+                        "category": "Beginners"
+                    },
+                    {
+                        "title": "10 Common Driving Mistakes Beginners Make",
+                        "slug": "common-driving-mistakes",
+                        "excerpt": "Avoid these frequent errors to stay safe and pass your driving test with ease.",
+                        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767bap?auto=format&fit=crop&q=80&w=600",
+                        "category": "Safety"
+                    },
+                    {
+                        "title": "Manual vs Automatic: Which Is Easier?",
+                        "slug": "manual-vs-automatic",
+                        "excerpt": "Comparing the two transmission types to help you decide which is right for your lifestyle.",
+                        "img": "https://images.unsplash.com/photo-1494976388531-d1058494cba3?auto=format&fit=crop&q=80&w=600",
+                        "category": "Guides"
+                    },
+                    {
+                        "title": "How to Become a Confident Driver",
+                        "slug": "become-confident-driver",
+                        "excerpt": "Overcoming driving anxiety through practice and the right mental approach.",
+                        "img": "https://images.unsplash.com/photo-1502877338535-7766d4733f6d?auto=format&fit=crop&q=80&w=600",
+                        "category": "Mindset"
+                    },
+                    {
+                        "title": "Important Road Signs Every Driver Must Know",
+                        "slug": "road-signs-guide",
+                        "excerpt": "A comprehensive guide to mandatory, cautionary, and informatory signs in India.",
+                        "img": "https://images.unsplash.com/photo-1562619972-66876777603b?auto=format&fit=crop&q=80&w=600",
+                        "category": "Education"
+                    },
+                    {
+                        "title": "Driving Tips for Indian Traffic",
+                        "slug": "indian-traffic-tips",
+                        "excerpt": "Practical strategies for handling the chaotic and unique nature of Indian city roads.",
+                        "img": "https://images.unsplash.com/photo-1542362567-b051c6755531?auto=format&fit=crop&q=80&w=600",
+                        "category": "Practical"
+                    }
+                ] %}
+
+                {% for post in posts %}
+                <div class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all" data-aos="fade-up">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="{{ post.img }}" alt="{{ post.title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-brandRed text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
+                            {{ post.category }}
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-heading font-bold mb-3 group-hover:text-brandRed transition-colors">{{ post.title }}</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">{{ post.excerpt }}</p>
+                        <a href="{{ url_for('blog_detail', slug=post.slug) }}" class="inline-flex items-center gap-2 font-bold text-brandBlack hover:text-brandRed transition-colors">
+                            Read More <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

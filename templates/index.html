@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+
+{% block title %}Home | {{ config.business_name }}{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden bg-brandBlack">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1449965409954-47275a24379c?auto=format&fit=crop&q=80&w=1920"
+                 alt="Professional Driving Lesson"
+                 class="w-full h-full object-cover opacity-50">
+            <div class="absolute inset-0 bg-gradient-to-r from-brandBlack via-brandBlack/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl" data-aos="fade-right">
+                <div class="inline-flex items-center gap-2 bg-brandGold/20 text-brandGold px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-6 border border-brandGold/30">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandGold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brandGold"></span>
+                    </span>
+                    Admissions Open for 2026
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heading font-extbold text-white leading-tight mb-6">
+                    Learn to Drive.<br>
+                    <span class="text-brandGold">Drive with Confidence.</span>
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl">
+                    Professional driving lessons designed for beginners, new drivers and anyone looking to build real-world driving confidence in {{ config.city }}.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a href="{{ url_for('contact') }}" class="bg-brandGold text-brandBlack px-8 py-4 rounded-full font-bold text-lg btn-transition text-center">
+                        Book a Driving Lesson
+                    </a>
+                    <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="bg-white text-brandBlack px-8 py-4 rounded-full font-bold text-lg btn-transition text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i> WhatsApp Us
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-sm font-medium">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-brandGold"></i> Beginner Friendly
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-brandGold"></i> Safety Focused
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-brandGold"></i> Practical Training
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-brandGold"></i> Expert Instructors
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-8 rounded-3xl bg-brandLightBg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-heading font-extbold text-brandGold mb-2">10+</div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Years Experience</div>
+                </div>
+                <div class="p-8 rounded-3xl bg-brandLightBg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-heading font-extbold text-brandGold mb-2">1000+</div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Students Trained</div>
+                </div>
+                <div class="p-8 rounded-3xl bg-brandLightBg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-heading font-extbold text-brandGold mb-2">3+</div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Training Vehicles</div>
+                </div>
+                <div class="p-8 rounded-3xl bg-brandLightBg border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl md:text-5xl font-heading font-extbold text-brandGold mb-2">100%</div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Focus on Safety</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Preview Section -->
+    <section class="py-24 bg-brandLightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-4">Our Driving Courses</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Choose the perfect course based on your current skill level and learning goals.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3">Beginner Course</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Perfect for those who have never sat behind the wheel. We start from zero.</p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Basic Vehicle Controls</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Steering & Gear Basics</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Quiet-Road Practice</li>
+                    </ul>
+                    <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-road"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3">Advanced Practice</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">For those who know basics but lack confidence in heavy city traffic.</p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Real Traffic Experience</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Parallel Parking</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Highway Driving</li>
+                    </ul>
+                    <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3">Test Preparation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Focused training to help you pass the driving test on your first attempt.</p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Mock Test sessions</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Road Sign Education</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Precision Maneuvers</li>
+                    </ul>
+                    <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6" data-aos="fade-up">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-4">Learn in Modern Vehicles</h2>
+                    <p class="text-gray-600 text-lg">We use the most popular and reliable cars in India to ensure you learn in a vehicle you'll likely own in the future.</p>
+                </div>
+                <a href="{{ url_for('vehicles') }}" class="text-brandGold font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                    View Full Fleet <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Vehicle 1 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden rounded-3xl mb-6">
+                        <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM.jpeg') }}"
+                             alt="Maruti Suzuki Swift"
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Swift</h3>
+                    <p class="text-gray-600 mb-4">The perfect balance of agility and comfort for urban learning.</p>
+                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-3xl mb-6">
+                        <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (1).jpeg') }}"
+                             alt="Maruti Suzuki Brezza"
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Brezza</h3>
+                    <p class="text-gray-600 mb-4">Spacious and commanding view of the road, ideal for building confidence.</p>
+                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden rounded-3xl mb-6">
+                        <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (2).jpeg') }}"
+                             alt="Maruti Suzuki Ertiga"
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Ertiga</h3>
+                    <p class="text-gray-600 mb-4">Comfortable and stable, great for learning long-distance driving.</p>
+                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-brandBlack text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-4">Your Journey to Freedom</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">A simple, step-by-step process to get you on the road safely.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+                <!-- Step 1 -->
+                <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-brandGold text-brandBlack rounded-full flex items-center justify-center text-3xl font-extbold mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-brandGold/40">01</div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Enquire</h3>
+                    <p class="text-gray-400 px-4">Contact us via WhatsApp or call to discuss your needs.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-brandGold text-brandBlack rounded-full flex items-center justify-center text-3xl font-extbold mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-brandGold/40">02</div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Choose Course</h3>
+                    <p class="text-gray-400 px-4">Pick a package that fits your current skill level.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-brandGold text-brandBlack rounded-full flex items-center justify-center text-3xl font-extbold mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-brandGold/40">03</div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Training</h3>
+                    <p class="text-gray-400 px-4">Get hands-on practical training with our expert instructors.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-brandGold text-brandBlack rounded-full flex items-center justify-center text-3xl font-extbold mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-brandGold/40">04</div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Confidence</h3>
+                    <p class="text-gray-400 px-4">Drive independently and safely on any road.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beginner/Women Trust Section -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brandGold rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12" data-aos="zoom-in">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c 가능하다-d3c?auto=format&fit=crop&q=80&w=600"
+                         alt="Confident Driver"
+                         class="rounded-3xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                </div>
+                <div class="md:w-1/2 text-brandBlack">
+                    <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-6 leading-tight">Never Driven Before?<br>That's Okay.</h2>
+                    <p class="text-brandBlack/90 text-lg mb-8 leading-relaxed">
+                        Learning to drive can feel intimidating at first. Our training is designed to help beginners learn step-by-step, practice at their own pace and gradually build confidence behind the wheel.
+                    </p>
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandBlack"></i> <span class="font-medium">Patient & Supportive Instructors</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandBlack"></i> <span class="font-medium">Zero-Judgment Learning Environment</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandBlack"></i> <span class="font-medium">Slow-Paced Introduction to Controls</span>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('contact') }}" class="bg-brandBlack text-brandGold px-8 py-4 rounded-full font-bold text-lg btn-transition inline-block">Start Your Journey</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-24 bg-brandLightBg text-center">
+        <div class="max-w-3xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-6">Ready to hit the road?</h2>
+            <p class="text-gray-600 text-lg mb-10">Join hundreds of confident drivers in {{ config.city }}. Book your first lesson today!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="{{ url_for('contact') }}" class="bg-brandGold text-brandBlack px-10 py-4 rounded-full font-bold text-xl btn-transition">Book Now</a>
+                <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="bg-white text-brandBlack border-2 border-gray-200 px-10 py-4 rounded-full font-bold text-xl btn-transition">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
