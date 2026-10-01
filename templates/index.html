@@ -86,55 +86,83 @@
     <section class="py-24 bg-brandLightBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-4">Our Driving Courses</h2>
+                <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-4">Our Services</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-lg">Choose the perfect course based on your current skill level and learning goals.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Course 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-seedling"></i>
+            <div class="relative group">
+                <!-- Prev Button -->
+                <button onclick="scrollCarousel('courses-carousel', -1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-3 rounded-full shadow-lg text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0" aria-label="Previous Course">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- Carousel Container -->
+                <div id="courses-carousel" class="flex overflow-x-auto gap-8 scroll-smooth snap-x snap-mandatory no-scrollbar">
+                    <!-- Course 1 -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Beginner Course</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Perfect for those who have never sat behind the wheel. We start from zero.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Basic Vehicle Controls</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Steering & Gear Basics</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Quiet-Road Practice</li>
+                        </ul>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
                     </div>
-                    <h3 class="text-2xl font-heading font-bold mb-3">Beginner Course</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">Perfect for those who have never sat behind the wheel. We start from zero.</p>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Basic Vehicle Controls</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Steering & Gear Basics</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Quiet-Road Practice</li>
-                    </ul>
-                    <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+
+                    <!-- Course 2 -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Advanced Practice</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">For those who know basics but lack confidence in heavy city traffic.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Real Traffic Experience</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Parallel Parking</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Highway Driving</li>
+                        </ul>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Test Preparation</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Focused training to help you pass the driving test on your first attempt.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Mock Test sessions</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Road Sign Education</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Precision Maneuvers</li>
+                        </ul>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
+
+                    <!-- Service 4: RTO Related Work -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">RTO Related Work</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Complete assistance with all documentation and government licensing formalities.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> 2 & 4 Wheeler License Support</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> License Renewal & Applications</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Documentation Guidance</li>
+                        </ul>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
                 </div>
 
-                <!-- Course 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-road"></i>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold mb-3">Advanced Practice</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">For those who know basics but lack confidence in heavy city traffic.</p>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Real Traffic Experience</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Parallel Parking</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Highway Driving</li>
-                    </ul>
-                    <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
-                </div>
-
-                <!-- Course 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold mb-3">Test Preparation</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">Focused training to help you pass the driving test on your first attempt.</p>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Mock Test sessions</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Road Sign Education</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Precision Maneuvers</li>
-                    </ul>
-                    <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
-                </div>
+                <!-- Next Button -->
+                <button onclick="scrollCarousel('courses-carousel', 1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-3 rounded-full shadow-lg text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0" aria-label="Next Course">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -152,45 +180,58 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Vehicle 1 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative overflow-hidden rounded-3xl mb-6">
-                        <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM.jpeg') }}"
-                             alt="Maruti Suzuki Swift"
-                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
+            <div class="relative group">
+                <!-- Prev Button -->
+                <button onclick="scrollCarousel('vehicles-carousel', -1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-3 rounded-full shadow-lg text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0" aria-label="Previous Vehicle">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- Carousel Container -->
+                <div id="vehicles-carousel" class="flex overflow-x-auto gap-10 scroll-smooth snap-x snap-mandatory no-scrollbar">
+                    <!-- Vehicle 1 -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-26px)] snap-start group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden rounded-3xl mb-6">
+                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM.jpeg') }}"
+                                 alt="Maruti Suzuki Swift"
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Swift</h3>
+                        <p class="text-gray-600 mb-4">The perfect balance of agility and comfort for urban learning.</p>
+                        <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
                     </div>
-                    <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Swift</h3>
-                    <p class="text-gray-600 mb-4">The perfect balance of agility and comfort for urban learning.</p>
-                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
+
+                    <!-- Vehicle 2 -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-26px)] snap-start group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden rounded-3xl mb-6">
+                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (1).jpeg') }}"
+                                 alt="Maruti Suzuki Brezza"
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Brezza</h3>
+                        <p class="text-gray-600 mb-4">Spacious and commanding view of the road, ideal for building confidence.</p>
+                        <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+
+                    <!-- Vehicle 3 -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-26px)] snap-start group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative overflow-hidden rounded-3xl mb-6">
+                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (2).jpeg') }}"
+                                 alt="Maruti Suzuki Ertiga"
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Ertiga</h3>
+                        <p class="text-gray-600 mb-4">Comfortable and stable, great for learning long-distance driving.</p>
+                        <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
                 </div>
 
-                <!-- Vehicle 2 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative overflow-hidden rounded-3xl mb-6">
-                        <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (1).jpeg') }}"
-                             alt="Maruti Suzuki Brezza"
-                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Brezza</h3>
-                    <p class="text-gray-600 mb-4">Spacious and commanding view of the road, ideal for building confidence.</p>
-                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
-                </div>
-
-                <!-- Vehicle 3 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden rounded-3xl mb-6">
-                        <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (2).jpeg') }}"
-                             alt="Maruti Suzuki Ertiga"
-                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold mb-2">Maruti Suzuki Ertiga</h3>
-                    <p class="text-gray-600 mb-4">Comfortable and stable, great for learning long-distance driving.</p>
-                    <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-2 font-bold text-brandGold hover:underline">Enquire for this car <i class="fa-solid fa-chevron-right text-xs"></i></a>
-                </div>
+                <!-- Next Button -->
+                <button onclick="scrollCarousel('vehicles-carousel', 1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-3 rounded-full shadow-lg text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0" aria-label="Next Vehicle">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>

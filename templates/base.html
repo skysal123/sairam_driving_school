@@ -48,6 +48,20 @@
             backdrop-filter: blur(10px);
         }
 
+        .nav-scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.5);
+            background: rgba(11, 11, 11, 0.98);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         .sticky-mobile-cta {
             position: fixed;
             bottom: 0;
@@ -86,11 +100,13 @@
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ url_for('home') }}" class="flex items-center gap-2">
-                        <span class="text-brandGold text-2xl"><i class="fa-solid fa-steering-wheel"></i></span>
-                        <span class="font-heading font-extrabold text-xl tracking-tight leading-none">
+                    <a href="{{ url_for('home') }}" class="flex items-center">
+                        <img src="{{ url_for('static', filename='images/logo_new.jpeg') }}"
+                             alt="{{ config.business_name }} Logo"
+                             class="h-12 w-auto object-contain mr-3">
+                        <span class="font-heading font-extrabold text-lg tracking-tight leading-none">
                             {{ config.business_name }}<br>
-                            <span class="text-xs font-sans font-medium text-gray-400 uppercase tracking-widest">Driving School</span>
+                            <span class="text-[10px] font-sans font-medium text-gray-400 uppercase tracking-widest"></span>
                         </span>
                     </a>
                 </div>
@@ -208,8 +224,8 @@
         <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="flex-1 py-4 text-center text-white font-bold bg-green-500 active:bg-green-600">
             <i class="fa-brands fa-whatsapp block text-sm mb-1"></i> WhatsApp
         </a>
-        <a href="{{ url_for('contact') }}" class="flex-1 py-4 text-center text-brandBlack font-bold bg-brandGold active:bg-yellow-600">
-            <i class="fa-solid fa-calendar-check block text-sm mb-1"></i> Book
+        <a href="{{ config.google_maps_link }}" target="_blank" class="flex-1 py-4 text-center text-brandBlack font-bold bg-brandGold active:bg-yellow-600">
+            <i class="fa-solid fa-location-dot block text-sm mb-1"></i> Directions
         </a>
     </div>
 
@@ -235,6 +251,15 @@
             const icon = menuBtn.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-xmark');
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
         });
     </script>
     {% block scripts %}{% endblock %}
