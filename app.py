@@ -8,7 +8,7 @@ app.secret_key = "sairam_driving_school_secret"
 CONFIG = {
     "business_name": "SAIRAM DRIVING SCHOOL",
     "tagline": "Learn to Drive. Drive with Confidence.",
-    "phone": "+91 8010653933",
+    "phone": "+91 9689512652",
     "whatsapp": "919689512652",
     "email": "sairamdrivingschool@gmail.com",
     "address": "Survey 43/1, Sai Plaza, Satav Vasti, Near Gulmohar City, Kharadi",
