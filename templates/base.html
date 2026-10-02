@@ -221,7 +221,7 @@
         <a href="tel:{{ config.phone }}" class="flex-1 py-4 text-center text-brandText font-bold border-r border-gray-200 active:bg-gray-100">
             <i class="fa-solid fa-phone block text-sm mb-1"></i> Call Now
         </a>
-        <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="flex-1 py-4 text-center text-white font-bold bg-green-500 active:bg-green-600">
+        <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" target="_blank" class="flex-1 py-4 text-center text-white font-bold bg-green-500 active:bg-green-600">
             <i class="fa-brands fa-whatsapp block text-sm mb-1"></i> WhatsApp
         </a>
         <a href="{{ config.google_maps_link }}" target="_blank" class="flex-1 py-4 text-center text-brandBlack font-bold bg-brandGold active:bg-yellow-600">
@@ -230,7 +230,7 @@
     </div>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" class="fixed bottom-24 right-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform active:scale-95 hidden md:flex">
+    <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" target="_blank" class="fixed bottom-24 right-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform active:scale-95 hidden md:flex">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
