@@ -21,11 +21,6 @@
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="relative" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78832?auto=format&fit=crop&q=80&w=800"
-                         alt="Driving Instructor" class="rounded-[3rem] shadow-2xl relative z-10">
-                    <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-brandGold/10 rounded-full -z-0"></div>
-                </div>
                 <div data-aos="fade-left">
                     <h2 class="text-4xl font-heading font-extbold mb-6">Why We Started {{ config.business_name }}</h2>
                     <p class="text-gray-600 text-lg mb-6 leading-relaxed">
@@ -83,6 +78,37 @@
                     </div>
                     <h3 class="text-2xl font-heading font-bold mb-4">Practical Mastery</h3>
                     <p class="text-gray-600 leading-relaxed">We don't just teach for the test; we teach for the real world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beginner/Women Trust Section -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brandGold rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12" data-aos="zoom-in">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c-d3c?auto=format&fit=crop&q=80&w=600"
+                         alt="Confident Driver"
+                         class="rounded-3xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                </div>
+                <div class="md:w-1/2 text-brandBlack">
+                    <h2 class="text-4xl md:text-5xl font-heading font-extbold mb-6 leading-tight">Never Driven Before?<br>That's Okay.</h2>
+                    <p class="text-brandBlack/90 text-lg mb-8 leading-relaxed">
+                        Learning to drive can feel intimidating at first. Our training is designed to help beginners learn step-by-step, practice at their own pace and gradually build confidence behind the wheel.
+                    </p>
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandBlack"></i> <span class="font-medium">Patient & Supportive Instructors</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandBlack"></i> <span class="font-medium">Zero-Judgment Learning Environment</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandBlack"></i> <span class="font-medium">Slow-Paced Introduction to Controls</span>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('contact') }}" class="bg-brandBlack text-brandGold px-8 py-4 rounded-full font-bold text-lg btn-transition inline-block">Start Your Journey</a>
                 </div>
             </div>
         </div>
