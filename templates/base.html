@@ -89,6 +89,64 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* Promo Ticker Styles */
+        .promo-ticker-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 30; /* Behind mobile CTA and floating icons */
+            background: #0B0B0B; /* Dark black/charcoal */
+            color: #FFFFFF;
+            overflow: hidden;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+            border-top: 1px solid #333;
+            pointer-events: auto;
+        }
+
+        .promo-ticker-track {
+            display: flex;
+            white-space: nowrap;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .promo-ticker-item {
+            display: inline-block;
+            padding: 12px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .promo-ticker-item:hover {
+            opacity: 0.8;
+        }
+
+        .promo-highlight {
+            color: #FF4500; /* Red-Orange accent */
+            font-weight: 800;
+            margin: 0 5px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 768px) {
+            .promo-ticker-container {
+                bottom: 72px; /* Increased spacing to clear the sticky-mobile-cta */
+            }
+            .promo-ticker-item {
+                font-size: 0.9rem;
+            }
+        }
     </style>
     {% block head %}{% endblock %}
 </head>
@@ -232,10 +290,28 @@
         </a>
     </div>
 
+    <!-- Promotional Ticker -->
+    <div class="promo-ticker-container">
+        <div class="promo-ticker-track">
+            <a href="{{ url_for('contact') }}" class="promo-ticker-item">
+                🔥 HURRY UP! — BOOK YOUR DRIVING SESSION NOW & GET <span class="promo-highlight">15% OFF</span> 🔥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+            <a href="{{ url_for('contact') }}" class="promo-ticker-item">
+                🔥 HURRY UP! — BOOK YOUR DRIVING SESSION NOW & GET <span class="promo-highlight">15% OFF</span> 🔥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+            <a href="{{ url_for('contact') }}" class="promo-ticker-item">
+                🔥 HURRY UP! — BOOK YOUR DRIVING SESSION NOW & GET <span class="promo-highlight">15% OFF</span> 🔥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+            <a href="{{ url_for('contact') }}" class="promo-ticker-item">
+                🔥 HURRY UP! — BOOK YOUR DRIVING SESSION NOW & GET <span class="promo-highlight">15% OFF</span> 🔥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+        </div>
+    </div>
+
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" target="_blank" class="fixed bottom-24 right-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform active:scale-95 hidden md:flex">
         <i class="fa-brands fa-whatsapp"></i>
-    </a>
+            </a>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
