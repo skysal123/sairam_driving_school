@@ -23,7 +23,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                    <a href="{{ url_for('contact') }}" class="bg-brandGold text-brandBlack px-8 py-4 rounded-full font-bold text-lg btn-transition text-center">
+                    <a href="{{ url_for('contact') }}" class="bg-white text-brandBlack px-8 py-4 rounded-full font-bold text-lg btn-transition text-center">
                         Book a Driving Lesson
                     </a>
                     <a href="https://wa.me/{{ config.whatsapp }}?text={{ config.whatsapp_msg }}" target="_blank" class="bg-white text-brandBlack px-8 py-4 rounded-full font-bold text-lg btn-transition text-center flex items-center justify-center gap-2">
@@ -32,18 +32,43 @@
                 </div>
 
                 <!-- Trust Indicators -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-sm font-medium mb-0">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check text-brandGold"></i> Beginner Friendly
+                <div class="relative p-6 md:p-8 rounded-3xl overflow-hidden">
+                    <!-- Background Image & Overlay Layer -->
+                    <div class="absolute inset-0 z-0">
+                        <img src="{{ url_for('static', filename='images/background_image.jpeg') }}"
+                             class="w-full h-full object-cover opacity-40"
+                             alt="Trust Indicators Background">
+                        <div class="absolute inset-0 bg-brandBlack/70"></div>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check text-brandGold"></i> Safety Focused
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check text-brandGold"></i> Practical Training
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check text-brandGold"></i> Expert Instructors
+
+                    <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-white text-sm font-medium mb-0">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Beginner Driving Course
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Advanced Driving Practice
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Manual Car Training
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Automatic Car Training
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Refresher Driving Course
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Driving Test Preparation
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Confidence Building Sessions
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Women Beginner Training
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> All Kinds of RTO Related Work
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,76 +85,186 @@
 
             <div class="relative group">
                 <!-- Prev Button -->
-                <button onclick="scrollCarousel('courses-carousel', -1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-3 rounded-full shadow-lg text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0" aria-label="Previous Course">
+                <button onclick="scrollCarousel('courses-carousel', -1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white p-3 rounded-full shadow-xl text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 border border-gray-100" aria-label="Previous Course">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
                 <!-- Carousel Container -->
-                <div id="courses-carousel" class="flex overflow-x-auto gap-8 scroll-smooth snap-x snap-mandatory no-scrollbar">
-                    <!-- Course 1 -->
+                <div id="courses-carousel" class="flex overflow-x-auto gap-8 scroll-smooth snap-x snap-mandatory no-scrollbar pb-8">
+                    <!-- Course 1: Beginner Driving Course -->
                     <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
                             <i class="fa-solid fa-seedling"></i>
                         </div>
-                        <h3 class="text-2xl font-heading font-bold mb-3">Beginner Course</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Perfect for those who have never sat behind the wheel. We start from zero.</p>
-                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Basic Vehicle Controls</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Steering & Gear Basics</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Quiet-Road Practice</li>
-                        </ul>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Beginner Driving Course</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Perfect for those who have never driven before. We start with the absolute basics.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Clutch & Gear coordination</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Steering control</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Basic road signs</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Quiet-road practice</li>
+                            </ul>
+                        </div>
                         <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
                     </div>
 
-                    <!-- Course 2 -->
+                    <!-- Course 2: Advanced Driving Practice -->
                     <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
                             <i class="fa-solid fa-road"></i>
                         </div>
-                        <h3 class="text-2xl font-heading font-bold mb-3">Advanced Practice</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">For those who know basics but lack confidence in heavy city traffic.</p>
-                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Real Traffic Experience</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Parallel Parking</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Highway Driving</li>
-                        </ul>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Advanced Driving Practice</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">For those who know the basics but fear heavy city traffic and complex junctions.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Traffic management</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Lane discipline</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Complex junctions</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Defensive driving</li>
+                            </ul>
+                        </div>
                         <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
                     </div>
 
-                    <!-- Course 3 -->
+                    <!-- Course 3: Manual Car Training -->
                     <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
                         <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-shield-halved"></i>
+                            <i class="fa-solid fa-gear"></i>
                         </div>
-                        <h3 class="text-2xl font-heading font-bold mb-3">Test Preparation</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Focused training to help you pass the driving test on your first attempt.</p>
-                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Mock Test sessions</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Road Sign Education</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Precision Maneuvers</li>
-                        </ul>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Manual Car Training</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Master the art of manual transmission with our patient instructors.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Hill starts</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Gear synchronization</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Engine braking</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Precision control</li>
+                            </ul>
+                        </div>
                         <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
                     </div>
 
-                    <!-- Service 4: RTO Related Work -->
+                    <!-- Course 4: Automatic Car Training -->
                     <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Automatic Car Training</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Quick and easy learning for those who prefer the convenience of an automatic.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Smooth acceleration</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Parking techniques</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Traffic handling</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Modern car controls</li>
+                            </ul>
+                        </div>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
+
+                    <!-- Course 5: Refresher Driving Course -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Refresher Driving Course</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Haven't driven in years? We help you shake off the rust and get back on the road.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Modern road rules</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Confidence building</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Current vehicle tech</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Refresher drills</li>
+                            </ul>
+                        </div>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
+
+                    <!-- Course 6: Driving Test Preparation -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Driving Test Preparation</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Intensive training specifically designed to help you ace the official driving test.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Mock tests</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Exact test routes</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Common error correction</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Nerve management</li>
+                            </ul>
+                        </div>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
+
+                    <!-- Course 7: Confidence Building Sessions -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="700">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Confidence Building Sessions</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">One-on-one focused sessions to overcome specific driving fears or anxieties.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Patient guidance</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Gradual exposure</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Positive reinforcement</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Customized drills</li>
+                            </ul>
+                        </div>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
+
+                    <!-- Course 8: Women Beginner Training -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="800">
+                        <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-venus"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-3">Women Beginner Training</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Specialized, supportive environment designed for women learning to drive for the first time.</p>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Safe environment</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Supportive approach</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Customized pacing</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Practical road focus</li>
+                            </ul>
+                        </div>
+                        <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
+                    </div>
+
+                    <!-- Course 9: RTO Related Work -->
+                    <div class="min-w-full md:min-w-[calc(33.333%-21px)] snap-start bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group" data-aos="fade-up" data-aos-delay="900">
                         <div class="w-14 h-14 bg-brandGold/10 text-brandGold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brandGold group-hover:text-white transition-colors">
                             <i class="fa-solid fa-file-invoice"></i>
                         </div>
                         <h3 class="text-2xl font-heading font-bold mb-3">RTO Related Work</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed">Complete assistance with all documentation and government licensing formalities.</p>
-                        <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Insurance, RRC, RME,PUC</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Batch Permit</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> Heavy Vehicle License</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGold"></i> 2/3/4 Wheeler License</li>
-                        </ul>
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">What you learn:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Insurance, RRC, RME,PUC</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Batch Permit</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> Heavy Vehicle License</li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500"><i class="fa-solid fa-check text-brandGold"></i> 2/3/4 Wheeler License</li>
+                            </ul>
+                        </div>
                         <a href="{{ url_for('contact') }}" class="block text-center py-3 px-6 rounded-xl font-bold border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-white transition-all">Enquire Now</a>
                     </div>
                 </div>
 
                 <!-- Next Button -->
-                <button onclick="scrollCarousel('courses-carousel', 1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-3 rounded-full shadow-lg text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0" aria-label="Next Course">
+                <button onclick="scrollCarousel('courses-carousel', 1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white p-3 rounded-full shadow-xl text-brandGold hover:bg-brandGold hover:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 border border-gray-100" aria-label="Next Course">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
@@ -173,7 +308,7 @@
                     <!-- Vehicle 2 -->
                     <div class="min-w-full md:min-w-[calc(33.333%-26px)] snap-start group" data-aos="fade-up" data-aos-delay="200">
                         <div class="relative overflow-hidden rounded-3xl mb-6">
-                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (1).jpeg') }}"
+                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (2).jpeg') }}"
                                  alt="Maruti Suzuki Brezza"
                                  class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
@@ -186,7 +321,7 @@
                     <!-- Vehicle 3 -->
                     <div class="min-w-full md:min-w-[calc(33.333%-26px)] snap-start group" data-aos="fade-up" data-aos-delay="300">
                         <div class="relative overflow-hidden rounded-3xl mb-6">
-                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (2).jpeg') }}"
+                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-09-30 at 1.46.53 AM (1).jpeg') }}"
                                  alt="Maruti Suzuki Ertiga"
                                  class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-brandGold text-brandBlack text-xs font-bold px-3 py-1 rounded-full uppercase">Training Car</div>
